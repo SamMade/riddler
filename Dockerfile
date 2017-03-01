@@ -1,0 +1,3 @@
+FROM node:boron
+WORKDIR /app
+EXPOSE 8080

@@ -1,2 +1,4 @@
-# riddler
-A VueJS survey application
+## Requirements
+* NodeJS
+
+## Install
