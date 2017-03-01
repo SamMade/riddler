@@ -11,7 +11,10 @@ module.exports = {
         rules: [  
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    postcss: [require('postcss-cssnext')()]
+                }
             },
             {
                 test: /\.js$/,
