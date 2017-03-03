@@ -1,14 +1,24 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry:  './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
         filename: "riddler.bundle.js"
-    },
+    },  
+    plugins: [new HtmlWebpackPlugin({
+        template: './src/index.template.ejs',
+        inject: 'body'
+    })],
     module: {
         rules: [  
+            {
+                enforce: 'pre',
+                test: /\.vue$/,
+                loader: 'eslint-loader',
+                exclude: /node_modules/
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -23,7 +33,7 @@ module.exports = {
                 query: {
                     presets: ['es2015']
                 }
-            },
+            }, 
             {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
