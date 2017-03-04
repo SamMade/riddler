@@ -1,12 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+function resolve (dir) {
+  return path.join(__dirname, '.', dir)
+}
+
 module.exports = {
     entry:  './src/main.js',
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: resolve('dist'),
         filename: "riddler.bundle.js"
     },  
+    resolve: {
+        extensions: ['.js', '.vue', '.json']
+    },
     plugins: [new HtmlWebpackPlugin({
         template: './src/index.template.ejs',
         inject: 'body'
@@ -29,10 +36,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015']
-                }
+                exclude: /node_modules/
             }, 
             {
                 test: /\.(ico|jpg|png|gif|svg|eot|otf|webp|ttf|woff|woff2)$/,
