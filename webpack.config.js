@@ -15,7 +15,7 @@ module.exports = {
         rules: [  
             {
                 enforce: 'pre',
-                test: /\.vue$/,
+                test: /\.(js|vue)$/,
                 loader: 'eslint-loader',
                 exclude: /node_modules/
             },
@@ -35,7 +35,7 @@ module.exports = {
                 }
             }, 
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(ico|jpg|png|gif|svg|eot|otf|webp|ttf|woff|woff2)$/,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]?[hash]'
