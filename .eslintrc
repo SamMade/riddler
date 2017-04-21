@@ -13,7 +13,7 @@
     },
     "rules": {
         "quotes": ["error", "single"],
-        "indent": ["error", "tab"],
+        "indent": ["warn", "tab"],
         "linebreak-style": ["error", "unix"],
         "semi": ["error", "always"],
         "no-unused-vars": ["warn"]

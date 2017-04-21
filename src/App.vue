@@ -1,32 +1,35 @@
 <template>
-  <div id="app">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+	<div id="app">
+	<h1>{{ msg }}</h1>
+	<a class="btn">{{ start }}</a>
+	<riddler-form></riddler-form>
+	</div>
 </template>
 
 <script>
+/*
+const router = new VueRouter({
+	mode: 'hash',
+	base: window.location.href,
+	routes: [
+		{path: '/', component: text}
+	]
+});
+*/
+
+import riddlerForm from './RiddlerForm';
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
+	name: 'app',
+	data () {
+		return {
+			msg: 'Welcome to the Riddler',
+			start: 'Start'
+		};
+	},
+	components: {
+		riddlerForm
+	}
+};
 </script>
 
 <style>

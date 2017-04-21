@@ -8,7 +8,7 @@ function resolve (dir) {
 module.exports = {
     entry:  './src/main.js',
     output: {
-        path: resolve('dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: "riddler.bundle.js"
     },  
     resolve: {
